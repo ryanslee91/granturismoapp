@@ -13,9 +13,8 @@ const Hero = () => {
     <div className="hero">
         <div className="flext-1 pt-36 padding-x">
             <h1 className="hero__title">
-                Are we ready to roll? ... fast and furious!
+                Are we ready? ... fast and furious!
             </h1>
-            <div className="hero__image-overlay" />
             <p className="hero__subtitle">
                 The real driving simulation you've never experienced before 
             </p>
@@ -23,19 +22,15 @@ const Hero = () => {
             <CustomButton 
                title="Select your car"
                containerStyles="bg-primary-blue
-               text-white rounded-full mt-10"
+               text-white rounded-full mt-20"
                handleClick={handleScroll}
             />
         </div>
         <div className="hero__image-container">
             <div className="hero__image">
-
-                <Image src="/grann.png" alt="grann"
+                <Image src="/gran7.png" alt="gran7"
                 fill className="object-contain" />
-
-     
             </div>
-
         </div>
     </div>
   )
