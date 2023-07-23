@@ -1,9 +1,10 @@
 // import { fetchCars } from "@/utils";
 import { HomeProps } from "@/types";
 import { fuels, yearsOfProduction } from "@/constants";
-import { SearchBar, CustomFilter, Hero } from "@/components";
+import { SearchBar, CustomFilter, Hero, ShowMore } from "@/components";
 import { fetchCars } from "@/utils";
 import { CarCard } from "@/components";
+
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
@@ -21,7 +22,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <Hero />
 
       <div className='mt-12 padding-x padding-y max-width' id='discover'>
-        <div className='home__text-container'>
+        <div className='home__text-container'> 
           <h1 className='text-4xl font-extrabold'>Car Catalogue</h1>
           <p>Explore out cars you might like</p>
         </div>
@@ -34,7 +35,6 @@ export default async function Home({ searchParams }: HomeProps) {
             <CustomFilter title='year' options={yearsOfProduction} />
           </div>
         </div>
-
             {!isDataEmpty ? (
               <section>
                 <div className="home__cars-wrapper">
@@ -42,6 +42,12 @@ export default async function Home({ searchParams }: HomeProps) {
                   <CarCard car={car} />
                   )}
                 </div>
+                <ShowMore 
+                  pageNumber={(searchParams.limit || 10) / 10} 
+                  isNext={(searchParams.limit || 10) > 
+                  allCars.length} 
+                />
+
               </section>
             ) : (
               <div className="home__error-container">

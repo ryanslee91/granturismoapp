@@ -10,8 +10,8 @@ const Navbar = () => {
         flex justify-between items-center sm:ox-16 px-6 py-4'>
             <Link href="/" className='flex justify-center items-center'>
                 <Image 
-                    src="/logo.svg"
-                    alt="car hub logo"
+                    src="/bugatti.svg"
+                    alt="bugatti logo"
                     width={118}
                     height={18}
                     className='object-contain'
